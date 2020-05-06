@@ -3,9 +3,11 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { RecordsPage } from './records/records.page';
+import { RecordPage } from './record/record.page';
 
 let routes = RouterModule.forChild ([        
     {path: "", component: RecordsPage, pathMatch: "full"},
+    {path: ":id", component: RecordPage},
 ]);
 
 @NgModule({
@@ -15,9 +17,11 @@ let routes = RouterModule.forChild ([
     ],
     declarations: [
         RecordsPage,
+        RecordPage,
     ],
     exports: [
         RecordsPage,
+        RecordPage,
     ],
     providers: []
 })

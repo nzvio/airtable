@@ -37,10 +37,14 @@ export class AirtableService {
 
     private buildRecord(airrecord: any): Record {
         let record: Record = new Record();
-
+        record.id = airrecord.id;        
+        
         for (let field in record) {            
-            record[field] = airrecord.get(field) || "";
-        }
+            if (field != "id") {
+                
+                record[field] = airrecord.get(field) || "";
+            }            
+        }              
 
         return record;
     }

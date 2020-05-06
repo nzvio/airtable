@@ -1,1 +1,15 @@
-records page
+<div class="content">
+    <h1>Airtable</h1>
+    <ng-container *ngIf="ready">
+        <table border="1">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr  *ngFor="let r of records">
+                <td><a routerLink="/air/{{r.id}}">{{r.id}}</a></td>
+                <td><a routerLink="/air/{{r.id}}">{{r.name}}</a></td>
+            </tr>
+        </table>    
+    </ng-container>    
+    <ng-container *ngIf="!ready">
+        loading...
+    </ng-container>        
+</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { DataService } from './data.service';
+import { RecordsRepository } from './repositories/records.repository';
 
 @NgModule({
     imports: [                
@@ -10,6 +11,7 @@ import { DataService } from './data.service';
     exports: [],
     providers: [
         DataService,        
+        RecordsRepository,
     ],
 })
 export class ServicesModule {}
